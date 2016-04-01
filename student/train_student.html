@@ -1,0 +1,85 @@
+<!doctype html>
+<html ng-app="registerModules">
+<head>
+<meta charset="UTF-8">
+<title>::Register User::</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/angular.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+
+    <h3 class="panel-title">::บันทึกฝึกงาน::</h3>
+    </div>
+	<div class="panel-body">
+    	<form ng-controller="registerController" name="regForm" >
+
+        <p>
+        ชื่อภาษาไทย:<input class="form-control" type="text" ng-model="fname" required>
+        นามสกุล:<input class="form-control" type="text" ng-model="fname" required>
+        </p>
+
+        <p>
+        ชื่อภาษาอังกฤษ:<input class="form-control" type="text" ng-model="lastname" required>
+        นามสกุล:<input class="form-control" type="text" ng-model="username" required>
+        </p>
+        
+        <p>
+        สาขาวิชา:<input class="form-control" type="password" ng-model="password" required>
+        รุ่น:<input class="form-control" type="password" ng-model="repass" required>
+        กลุ่ม:<input class="form-control" type="password" ng-model="repass" required>
+        </p>
+        
+        <p>
+        รหัสนักศึกษา:<input class="form-control" type="password" ng-model="repass" required>
+        ระดับ:<input class="form-control" type="password" ng-model="repass" required>
+        </p>
+        <p>
+        ชื่อ-สกุลบิดา:<input class="form-control" type="password" ng-model="repass" required>
+        อาชีพ:<input class="form-control" type="password" ng-model="repass" required>
+        </p>
+        
+        <p>
+        ชื่อ-สกุลมารดา:<input class="form-control" type="password" ng-model="repass" required>
+        อาชีพ:<input class="form-control" type="password" ng-model="repass" required>
+        </p>
+        <p>
+            ที่อยู่ปัจจุบันของนักศึกษา</br>
+            <p>
+            เลขที่:<input class="form-control" type="password" ng-model="repass" required>
+            ซอย:<input class="form-control" type="password" ng-model="repass" required>
+            ถนน:<input class="form-control" type="password" ng-model="repass" required>
+            </p>
+            <p>
+            ตำบล/แขวง:<input class="form-control" type="password" ng-model="repass" required>
+            ดำเภอ/เขต:<input class="form-control" type="password" ng-model="repass" required>
+            </p>
+            <p>
+            จังหวัด:<input class="form-control" type="password" ng-model="repass" required>
+            รหัสไปรษณีย์:<input class="form-control" type="password" ng-model="repass" required>
+            </p>
+            <p>
+            โทรศัพท์:<input class="form-control" type="password" ng-model="repass" required>
+            E-mail:<input class="form-control" type="password" ng-model="repass" required>
+            </p>
+        </p>
+        <p>
+
+            
+        </p>
+
+        <p>
+        <input type="submit" value="Next" class="btn btn-sm btn-success" >
+        
+        </p>
+     
+        </form>
+    </div>
+</div>
+
+</div>
+
+<script src="register.js"></script>
+</body>
+</html>

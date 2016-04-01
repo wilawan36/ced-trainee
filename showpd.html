@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+ <script src="js/angular.min.js"></script>
+<script type="text/javascript" src="dbcontroller.js"></script>
+<title>List User</title>
+</head>
+<body>
+<div class="container">
+<div class="row">
+<div class="col-md-8  col-md-offset-2">
+<div ng-controller="showdatacontroller ">
+<table class="table table-striped">
+<thead>
+	<tr>
+		<th>ชื่อผู้ใช้งาน</th>
+		<th  style="width:10%;text-align:center">จัดการ</th>
+	</tr>
+</thead>
+<tbody>
+	<tr ng-repeat="c in showData| filter : sData">
+	<td ><span class="hide">{{c.id}}</span>{{c.fname}} {{c.lastname}}</td>
+	<td>
+		<input type="submit" value="Edit" class="btn btn-sm btn-danger"  ng-click="deleteuser()"> | 
+		<input type="submit" value="Delete" class="btn btn-sm btn-success" id="test{{c.id}}" ng-click="deleteuser(c.id)">
+	</td>
+	</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html ng-app="myapp">
+<head>
+<meta charset="UTF-8">
+<title>::Update User::</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/angular.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+
+    
+    </div>
+	<div class="panel-body">
+    	<form ng-controller="showdatacontroller" name="regForm" >
+
+        <p>First Name:
+        <input class="form-control" type="text" name="fname" ng-model="fname" required>
+       
+        </p>
+        
+        <p>Last Name:
+        <input class="form-control" type="text" name="lastname" ng-model="lastname" required>
+             </p>
+        
+        <p>username:
+        <input class="form-control" type="text" name="username" ng-model="username" required>
+        
+        </p>
+        
+        <p>Password:
+        <input class="form-control" type="password" name="password" ng-model="password" required>
+        </p>
+        <p>Re-Password:
+        <input class="form-control" type="password" name="repass" ng-model="repass" required>
+        </p>
+         
+        <p>
+        <input lass="form-control" type="radio" ng-model="usertype" value="student"> นักศึกษา
+        <input lass="form-control" type="radio" ng-model="usertype" value="mentor"> พี่เลี้ยง
+        <input lass="form-control" type="radio" ng-model="usertype" value="teacher"> อาจารย์นิเทศก์
+        </p>
+
+        <p>
+        <input type="submit" value="submit" class="btn btn-sm btn-success" ng-click="submit_data()">
+        
+        </p>
+     
+        </form>
+    </div>
+</div>
+
+</div>
+
+<script src="register.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="loginModules">
+<head>
+<meta charset="UTF-8">
+<title>::LOGIN::</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/angular.min.js"></script>
+</head>
+
+<body>
+
+	<div class="panel-body">
+    	<form  ng-controller="loginController" name="regForm" action="api/logcheck.php">
+
+        <p>Id Student:
+        <input class="form-control" id="username" name="username" type="text" ng-model="username" >
+       
+        </p>
+        
+        <p>Password:
+        <input class="form-control" id="password" name="password" type="password" ng-model="password" >
+        </p>
+
+       <p>
+        <input type="submit" value="submit" class="btn btn-sm btn-success" ng-click="login()">
+        
+        </p>
+  </form>
+    </div>
+</div>
+
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>

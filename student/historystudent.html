@@ -1,0 +1,308 @@
+<!doctype html>
+<html ng-app="historyModules">
+<head>
+<meta charset="UTF-8">
+<title>History Student</title>
+<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<script src="../js/angular.min.js"></script>
+<script src="../AddHistory.js"></script>
+
+</head>
+
+<body>
+
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">History Student</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">History Student</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="checktimestudent.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">alarm_on</i>Check Time</a>
+      <a class="mdl-navigation__link" href="menuhistorystudent.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">history</i>History</a>
+      <a class="mdl-navigation__link" href="#.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">playlist_add_check</i>บันทึกการฝึกงาน</a>
+      <a class="mdl-navigation__link" href="menuchatstudent.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">contacts</i>ห้องสนทนา</a>
+      <a class="mdl-navigation__link" href="../index.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">input</i>Sign out</a>
+    </nav>
+  </div>
+
+
+
+
+
+<main class="mdl-layout__content mdl-color--grey-100">
+        <div class="mdl-grid demo-content">
+         
+            <div class="demo-card-square mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+              <div class="mdl-card__title mdl-card--expand ">
+                <h1 class="mdl-card__title-text">History Student...<i class="material-icons">person_pin</i></h1>
+              </div>
+              
+              <div class="mdl-card__actions mdl-card--border">
+
+                <form ng-controller="historyController" name="hisForm" action="../api/addHistory.php">
+                  
+
+                    <div class="mdl-cell mdl-cell--12-col mdl-card__supporting-text">
+
+                      <h4>ประวัตินักเรียน...</h4>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--5-col">
+                              <input class="mdl-textfield__input" type="text" id="fname" ng-model="fname">
+                              <label class="mdl-textfield__label" for="sample3">ชื่อภาษาอังกฤษ</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--5-col">
+                              <input class="mdl-textfield__input" type="text" id="lname" ng-model="lname">
+                              <label class="mdl-textfield__label" for="sample3">นามสกุล</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--5-col">
+                              <input class="mdl-textfield__input" type="text" id="thaifname" ng-model="thaifname">
+                              <label class="mdl-textfield__label" for="sample3">ชื่อภาษาไทย</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--5-col">
+                              <input class="mdl-textfield__input" type="text" id="thailname" ng-model="thailname">
+                              <label class="mdl-textfield__label" for="sample3">นามสกุล</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--4-col">
+                              <input class="mdl-textfield__input" type="text" id="dep" ng-model="dep">
+                              <label class="mdl-textfield__label" for="sample3">สาขาวิชา...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--2-col">
+                              <input class="mdl-textfield__input" type="text" id="gen" ng-model="gen">
+                              <label class="mdl-textfield__label" for="sample3">รุ่น...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--2-col">
+                              <input class="mdl-textfield__input" type="text" id="group" ng-model="group">
+                              <label class="mdl-textfield__label" for="sample3">กลุ่ม...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--5-col">
+                              <input class="mdl-textfield__input" type="text" pattern="[0-9 -]*" id="stdID" ng-model="stdID">
+                              <label class="mdl-textfield__label" for="sample2">รหัสประจำตัวนักศึกษา...</label>
+                              <span class="mdl-textfield__error">Input is not a number!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--2-col">
+                              <input class="mdl-textfield__input" type="text" id="degree" ng-model="degree">
+                              <label class="mdl-textfield__label" for="sample2">ระดับ...</label>
+                              <span class="mdl-textfield__error">Input is not a number!</span>
+                            </div>
+                      
+                    </div>
+
+                    <div class="mdl-card__actions mdl-card--border">
+                      <div class="mdl-cell mdl-cell--12-col mdl-card__supporting-text">
+
+                      <h4>บิดา-มารดา...</h4>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--8-col">
+                              <input class="mdl-textfield__input" type="text" id="namefa" ng-model="nameFa">
+                              <label class="mdl-textfield__label" for="sample3">ชื่อ-นามสุกลบิดา...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--4-col">
+                              <input class="mdl-textfield__input" type="text" id="bussfa" ng-model="bussfa">
+                              <label class="mdl-textfield__label" for="sample3">อาชีพ...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--8-col">
+                              <input class="mdl-textfield__input" type="text" id="nameMa" ng-model="nameMa">
+                              <label class="mdl-textfield__label" for="sample3">ชื่อ-นามสุกลมารดา...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--4-col">
+                              <input class="mdl-textfield__input" type="text" id="bussMa" ng-model="bussMa">
+                              <label class="mdl-textfield__label" for="sample3">อาชีพ...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            
+                      
+                      </div>
+                    </div>
+
+
+                    <div class="mdl-card__actions mdl-card--border">
+                      <div class="mdl-cell mdl-cell--12-col mdl-card__supporting-text">
+
+                      <h4>ที่อยู่...</h4>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--2-col">
+                              <input class="mdl-textfield__input" type="text" id="NumAdd" ng-model="Numadd">
+                              <label class="mdl-textfield__label" for="sample3">เลขที่...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
+                              <input class="mdl-textfield__input" type="text" id="soiAdd" ng-model="soiAdd">
+                              <label class="mdl-textfield__label" for="sample3">ซอย...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
+                              <input class="mdl-textfield__input" type="text" id="street" ng-model="street">
+                              <label class="mdl-textfield__label" for="sample3">ถนน...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
+                              <input class="mdl-textfield__input" type="text" id="tambon" ng-model="tambon">
+                              <label class="mdl-textfield__label" for="sample3">ตำบล/แขวง...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
+                              <input class="mdl-textfield__input" type="text" id="aumper" ng-model="aumper">
+                              <label class="mdl-textfield__label" for="sample3">อำเภอ/เขต...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
+                              <input class="mdl-textfield__input" type="text" id="province" ng-model="province">
+                              <label class="mdl-textfield__label" for="sample3">จังหวัด...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
+                              <input class="mdl-textfield__input" type="text" id="postcode" ng-model="postcode">
+                              <label class="mdl-textfield__label" for="sample3">รหัสไทรษณีย์...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
+                              <input class="mdl-textfield__input" type="text" id="phone" ng-model="phone">
+                              <label class="mdl-textfield__label" for="sample3">เบอร์โทรศัพท์...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
+                              <input class="mdl-textfield__input" type="text" id="email" ng-model="email">
+                              <label class="mdl-textfield__label" for="sample3">E-mail...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+                      
+                      </div>
+                    </div>
+
+                    <div class="mdl-card__actions mdl-card--border">
+                      <div class="mdl-cell mdl-cell--12-col mdl-card__supporting-text">
+
+                      <h4>เพื่อนสนิท...</h4>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--5-col">
+                              <input class="mdl-textfield__input" type="text" id="f_fname" ng-model="f_fname">
+                              <label class="mdl-textfield__label" for="sample3">ชื่อ...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--5-col">
+                              <input class="mdl-textfield__input" type="text" id="f_lname" ng-model="f_lname">
+                              <label class="mdl-textfield__label" for="sample3">นามสกุล...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--2-col">
+                              <input class="mdl-textfield__input" type="text" id="f_NumAdd" ng-model="f_NumAdd">
+                              <label class="mdl-textfield__label" for="sample3">เลขที่...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
+                              <input class="mdl-textfield__input" type="text" id="f_soiAdd" ng-model="f_soiAdd">
+                              <label class="mdl-textfield__label" for="sample3">ซอย...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
+                              <input class="mdl-textfield__input" type="text" id="f_street" ng-model="f_street">
+                              <label class="mdl-textfield__label" for="sample3">ถนน...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
+                              <input class="mdl-textfield__input" type="text" id="f_tambon" ng-model="f_tambon">
+                              <label class="mdl-textfield__label" for="sample3">ตำบล/แขวง...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
+                              <input class="mdl-textfield__input" type="text" id="f_aumper" ng-model="f_aumper">
+                              <label class="mdl-textfield__label" for="sample3">อำเภอ/เขต...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
+                              <input class="mdl-textfield__input" type="text" id="f_province" ng-model="f_province">
+                              <label class="mdl-textfield__label" for="sample3">จังหวัด...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
+                              <input class="mdl-textfield__input" type="text" id="f_postcode" ng-model="f_postcode">
+                              <label class="mdl-textfield__label" for="sample3">รหัสไทรษณีย์...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
+                              <input class="mdl-textfield__input" type="text" id="f_phone" ng-model="f_phone">
+                              <label class="mdl-textfield__label" for="sample3">เบอร์โทรศัพท์...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
+                              <input class="mdl-textfield__input" type="text" id="f_email" ng-model="f_email">
+                              <label class="mdl-textfield__label" for="sample3">E-mail...</label>
+                              <span class="mdl-textfield__error">Input is not a text!</span>
+                            </div>
+                      
+                      </div>
+                    </div>
+
+
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a style="font-size:28px;" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="addHistory()">Submit</a>
+                      
+                      <a href="menuhistorystudent.html" style="font-size:28px;" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Back</a>
+                    </div>
+
+
+                  
+
+                </form>
+              </div>
+              <div class="demo-separator mdl-cell--1-col"></div>
+            </div>
+ 
+        </div>
+      </main>
+</div>
+
+</body>
+</html>

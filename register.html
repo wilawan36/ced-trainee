@@ -1,0 +1,123 @@
+<?php
+  session_start();
+  if(@$_SESSION["usertype"]==Admin){ 
+    }else header("location: index.html");
+?>
+<!doctype html>
+<html ng-app="registerModules">
+<head>
+<meta charset="UTF-8">
+<title>::Register User::</title>
+<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script src="js/angular.min.js"></script>
+</head>
+
+<body>
+
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Register</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Register</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="index.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">person</i>Login</a>
+      <a class="mdl-navigation__link" href="register.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">person_add</i>Register</a>
+      <a class="mdl-navigation__link" href="company.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">domain</i>Company</a>
+    </nav>
+  </div>
+
+
+
+
+
+<main class="mdl-layout__content mdl-color--grey-100" id="PageCon">
+
+        
+        <div class="mdl-grid demo-content" id="Register">
+          
+            <div class="demo-card-square mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+              <div class="mdl-card__title mdl-card--expand">
+                <h1 class="mdl-card__title-text">User Register...<i class="material-icons">person_pin</i></h1>
+              </div>
+
+              <div class="mdl-card__supporting-text">ประวัติ</div>
+              
+              <div class="mdl-card__actions mdl-card--border">
+
+                <form ng-controller="registerController" name="regForm" >
+
+                    <div class="mdl-cell mdl-cell--12-col mdl-card__supporting-text">
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
+                              <input class="mdl-textfield__input" type="text" name="username" ng-model="username" required>
+                              <label class="mdl-textfield__label" for="sample3">User Name...</label>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
+                              <input class="mdl-textfield__input" type="password" name="password" ng-model="password" required>
+                              <label class="mdl-textfield__label" for="sample3">Password...</label>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
+                              <input class="mdl-textfield__input" type="password" name="repass" ng-model="repass" required>
+                              <label class="mdl-textfield__label" for="sample3">Re-Password...</label>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
+                              <input class="mdl-textfield__input" type="text" name="fname" ng-model="fname" required>
+                              <label class="mdl-textfield__label" for="sample3">Fname...</label>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
+                              <input class="mdl-textfield__input" type="text" name="lastname" ng-model="lastname" required>
+                              <label class="mdl-textfield__label" for="sample3">Last Name...</label>
+                            </div>
+
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+                              <input type="radio" id="option-1" class="mdl-radio__button" name="options"  ng-model="usertype" value="student">
+                              <span class="mdl-radio__label">นักเรียน</span>
+                            </label>
+
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+                              <input type="radio" id="option-2" class="mdl-radio__button" name="options" ng-model="usertype" value="mentor">
+                              <span class="mdl-radio__label">อาจารย์</span>
+                            </label>
+
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
+                              <input type="radio" id="option-3" class="mdl-radio__button" name="options" ng-model="usertype" value="teacher">
+                              <span class="mdl-radio__label">สถานประกอบการ</span>
+                            </label>
+
+                    </div>
+
+                    <div class="mdl-card__actions mdl-card--border">
+                      <input type="submit" value="submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="font-size:28px;" ng-click="submit_data()">
+                    </div>
+
+                </form>
+              </div>
+              <div class="demo-separator mdl-cell--1-col"></div>
+            </div>
+            
+        </div>
+      
+
+  </main>
+
+
+</div>
+
+<script src="register.js"></script>
+</body>
+</html>
